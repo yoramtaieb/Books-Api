@@ -1,6 +1,7 @@
+const { app_port } = require("./config/env");
 const app = require("./config/server");
-//   config = require("./config/env");
+config = require("./config/env");
 
-app.listen(5000, () => {
+app.listen(app_port, () => {
   console.log("server started");
 });
