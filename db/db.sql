@@ -41,5 +41,15 @@ CREATE TABLE IF NOT EXISTS Wishlist (
   ON DELETE CASCADE
 );
 
+INSERT INTO Category (`id`, `name`) VALUES 
+('1', 'Action'),
+('2', 'Roman'),
+('3', 'Policier'),
+('4', 'Science-fiction');
 
+INSERT INTO Book (`id`, `name`, `idCategory`) VALUES 
+('1', 'Les maladies', '2'),
+('2', 'Arsene Lupin', '3'),
+('3', 'Retour vers le futur', '4'),
+('4', 'Mission Impossible', '1');
 
