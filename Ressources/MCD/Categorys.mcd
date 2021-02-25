@@ -1,0 +1,7 @@
+canBorrow , 0N USER, 0N BOOK:
+USER: id, username, email, password
+:
+
+BOOK: id, name, idUser, idCategory,
+hasOne , 1N CATEGORY, 11 BOOK
+CATEGORY: id, name,

@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<style>
+  #mld .relation { font-variant: small-caps; font-weight: bold }
+  #mld .primary { text-decoration: underline }
+  #mld .foreign { font-style: oblique }
+  #mld .normal { }
+</style>
+</head>
+<body>
+<div id='mld'>
+<div>
+  <span class='relation'>canBorrow</span> (
+    <span class='foreign primary'>id</span>,
+    <span class='foreign primary'>id.1</span>
+  )
+</div>
+<div>
+  <span class='relation'>USER</span> (
+    <span class='primary'>id</span>,
+    <span class='normal'>username</span>,
+    <span class='normal'>email</span>,
+    <span class='normal'>password</span>
+  )
+</div>
+<div>
+  <span class='relation'>BOOK</span> (
+    <span class='primary'>id</span>,
+    <span class='normal'>name</span>,
+    <span class='normal'>idUser</span>,
+    <span class='normal'>idCategory</span>,
+    <span class='normal'></span>,
+    <span class='foreign'>id.1</span>
+  )
+</div>
+<div>
+  <span class='relation'>CATEGORY</span> (
+    <span class='primary'>id</span>,
+    <span class='normal'>name</span>,
+    <span class='normal'></span>
+  )
+</div>
+</div>
+</body>
+</html>
