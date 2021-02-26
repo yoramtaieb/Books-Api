@@ -7,7 +7,6 @@ module.exports = (services) => {
     getById: async (req, res) => {
       const id = req.params.id;
       let result = await services.book.getById(id);
-      console.log(result);
       res.send(result);
     },
   };
