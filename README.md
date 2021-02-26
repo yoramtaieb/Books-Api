@@ -1,7 +1,6 @@
 # Books Store 📚
 
-## Trello
-![Trello](https://trello.com/b/egoqRlxp/books-store)
+Pour notre [Trello], visitez (https://trello.com/b/egoqRlxp/books-store)!
 
 ## Diagramme MCD 📝
 ![MCD!](https://github.com/yoramtaieb/Books-api/blob/master/Ressources/MCD/Categorys.svg)
