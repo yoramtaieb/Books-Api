@@ -3,10 +3,9 @@ module.exports = (models) => {
     getAll: async (data) => {
       return models.book.query("select * from Book");
     },
-
     getById: async (id) => {
-      return models.book.query(`SELECT * FROM Book WHERE id = ${id}`);
-    }
+      return models.book.query("select * from Book where id = ? LIMIT 1", [id]);
+    },
   };
 
   return book_repository;

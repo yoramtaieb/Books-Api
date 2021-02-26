@@ -5,10 +5,11 @@ module.exports = (services) => {
       res.send(result);
     },
     getById: async (req, res) => {
-      const id = req.params.id
+      const id = req.params.id;
       let result = await services.book.getById(id);
+      console.log(result);
       res.send(result);
-    }
+    },
   };
 
   return book_controller;

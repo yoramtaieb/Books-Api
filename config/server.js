@@ -6,8 +6,8 @@ const controllers = require("../controllers/index"),
   routes = require("./routes/index");
 
 const app = express();
-
 app.use(express.json());
+
 app.use(routes(express, controllers));
 
 module.exports = app;
