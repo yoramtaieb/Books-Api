@@ -18,15 +18,6 @@ CREATE TABLE IF NOT EXISTS Genre (
   name VARCHAR(55)
 );
 
-CREATE TABLE IF NOT EXISTS BookCategory (
-  id INT(11) PRIMARY KEY NOT NULL,
-  idBook INT(11),
-  idCategory INT(11),
-  FOREIGN KEY(idBook) REFERENCES Book(id)
-  ON DELETE CASCADE,
-  FOREIGN KEY(idCategory) REFERENCES Category(id)
-  ON DELETE CASCADE
-);
 
 CREATE TABLE IF NOT EXISTS Book (
   id INT(11) PRIMARY KEY NOT NULL,
@@ -34,9 +25,17 @@ CREATE TABLE IF NOT EXISTS Book (
   idGenre INT(11),
   idBookCategory INT(11),
   author VARCHAR(55),
-  FOREIGN KEY (idBookCategory) REFERENCES BookCategory(id)
-  ON DELETE CASCADE,
   FOREIGN KEY(idGenre) REFERENCES Genre(id)
+  ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS BookCategory (
+  id INT(11) PRIMARY KEY NOT NULL,
+  idBook INT(11),
+  idCategory INT(11),
+  FOREIGN KEY(idBook) REFERENCES Book(id)
+  ON DELETE CASCADE,
+  FOREIGN KEY(idCategory) REFERENCES Category(id)
   ON DELETE CASCADE
 );
 
@@ -77,6 +76,13 @@ INSERT INTO Genre (`id`, `name`) VALUES
 ('4', 'Poesie');
 
 
+INSERT INTO Book (`id`, `name`, `idGenre`, `idBookCategory`,`author`) VALUES
+('1', 'Les maladies', '2', '1', 'My' ),
+('2', 'Arsene Lupin', '3', '3','Yoram'),
+('3', 'Retour vers le futur', '4', '2', 'Clement'),
+('4', 'Mission Impossible', '1', '4', 'Inconnu');
+
+
 INSERT INTO BookCategory (`id`, `idBook`, `idCategory`) VALUES
 ('1', '1', '1'),
 ('2', '1', '4'),
@@ -85,10 +91,3 @@ INSERT INTO BookCategory (`id`, `idBook`, `idCategory`) VALUES
 ('5', '4', '2'),
 ('6', '4', '1'),
 ('7', '4', '3');
-
-
-INSERT INTO Book (`id`, `name`, `idGenre`, `idBookCategory`,`author`) VALUES
-('1', 'Les maladies', '2', '1', 'My' ),
-('2', 'Arsene Lupin', '3', '3','Yoram'),
-('3', 'Retour vers le futur', '4', '2', 'Clement'),
-('4', 'Mission Impossible', '1', '4', 'Inconnu');
