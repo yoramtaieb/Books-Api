@@ -8,6 +8,11 @@ module.exports = (repositories) => {
       console.log(rows);
       return rows[0];
     },
+    getByName: async (name) => {
+      const rows = await repositories.book.getByName(name);
+      console.log(rows);
+      return rows[0];
+    },
   };
 
   return book_service;

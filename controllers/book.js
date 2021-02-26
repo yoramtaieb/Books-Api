@@ -9,6 +9,11 @@ module.exports = (services) => {
       let result = await services.book.getById(id);
       res.send(result);
     },
+    getByName: async (req, res) => {
+      const name = req.params.name;
+      let result = await services.book.getByName(name);
+      res.send(result);
+    },
   };
 
   return book_controller;
